@@ -1,0 +1,152 @@
+/* =====================
+   KÍCH THƯỚC CHUẨN
+===================== */
+:root {
+    --header-h: 44px;
+    --cell-h: 56px;
+    --day-w: 55px;
+}
+
+/* =====================
+   BẢNG TỔNG
+===================== */
+.attendance-table {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* =====================
+   CHUNG CHO TẤT CẢ TABLE
+===================== */
+.attendance-table table {
+    border-collapse: collapse;
+}
+
+.attendance-table th,
+.attendance-table td {
+    border: 1px solid #ccc;
+    text-align: center;
+    height: var(--cell-h);
+    padding: 0;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* =====================
+   HEADER (ĐỒNG BỘ)
+===================== */
+.attendance-table thead th,
+.attendance-table th {
+    height: 48px;
+    background: #f3f4f6;
+    font-weight: 600;
+}
+
+/* =====================
+   CỘT NHÂN VIÊN (TRÁI)
+===================== */
+.fixed-left {
+    flex: 0 0 220px;
+    background: #fff;
+}
+
+.emp-col {
+    width: 220px;
+    text-align: left;
+    padding-left: 8px;
+}
+
+/* Ô CHÉO */
+.diagonal {
+    position: relative;
+    height: var(--header-h);
+    background: #f3f4f6;
+}
+
+.diagonal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom right,
+        transparent 49%,
+        #999 50%,
+        transparent 51%
+    );
+}
+
+.diagonal .top {
+    position: absolute;
+    top: 18px;
+    right: 8px;
+    font-size: 17px;
+}
+
+.diagonal .bottom {
+    position: absolute;
+    bottom: 18px;
+    left: 8px;
+    font-size: 17px;
+}
+
+/* =====================
+   PHẦN NGÀY (GIỮA)
+===================== */
+.scroll-days {
+    overflow-x: auto;
+    max-width: 60vw;
+}
+
+.days-table th,
+.days-table td {
+    width: var(--day-w);
+    min-width: var(--day-w);
+}
+
+/* NGÀY + THỨ GỌN */
+.day-box {
+    height: var(--header-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.day-box .day {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.day-box .dow {
+    font-size: 10px;
+    color: #64748b;
+}
+
+/* =====================
+   CỘT PHẢI
+===================== */
+.fixed-right {
+    flex: 0 0 240px;
+    background: #fff;
+}
+
+.fixed-right th,
+.fixed-right td {
+    width: 120px;
+}
+
+/* =====================
+   CHẤM CÔNG
+===================== */
+td.work { cursor: pointer; }
+
+.off  { background: #fde2e2; }
+.half { background: #fef3c7; }
+.full { background: #dcfce7; }
+.ot   { background: #dbeafe; font-weight: bold; }
+
+/* LƯƠNG */
+.salary {
+    font-weight: bold;
+    color: #16a34a;
+}
